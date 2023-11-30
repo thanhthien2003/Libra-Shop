@@ -215,58 +215,61 @@
                 font-size: 14px;
             }
         }
+        button-back {
+            padding: 0.1em 0.25em;
+            width: 13em;
+            height: 4.2em;
+            background-color: #212121;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 12px;
+        }
+
+        button-back span-back {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 8.25em;
+            height: 2.5em;
+            background-color: #212121;
+            border-radius: 0.2em;
+            font-size: 1.5em;
+            color: #fff;
+            border: 0.08em solid #fff;
+            box-shadow: 0 0.4em 0.1em 0.019em #fff;
+        }
+
+        button-back span-back:hover {
+            transition: all 0.5s;
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 #fff;
+        }
+
+        button-back span-back:not(hover) {
+            transition: all 1s;
+        }
+
+
 
     </style>
 </head>
 <body style="background: linear-gradient(90deg, rgba(208,243,245,1) 42%, rgba(14,233,242,1) 100%) ;">
 
-<header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img style="width: 30%" src="assets/images/logoLibra.png">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                        <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                        <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
-                        <li class="submenu">
-                            <a href="javascript:">Pages</a>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="javascript:;">Features</a>
-                            <ul>
-                                <li><a href="#">Features Page 1</a></li>
-                                <li><a href="#">Features Page 2</a></li>
-                                <li><a href="#">Features Page 3</a></li>
-                                <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                            </ul>
-                        </li>
-                        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                        <li><a href="login-form.html">Login</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <button class="button-back">
+            <a href="index.html" class="logo">
+        <span class="span-back">
+        Back home
+        </span>
+            </a>
+        </button>
     </div>
-</header>
-<!-- ***** Login Form ***** -->
+</div>
 
 <div class="container" style="margin-top: 50px">
     <div class="row">

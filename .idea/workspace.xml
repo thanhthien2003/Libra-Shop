@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd1cf3c-7fa7-4de4-bd52-e423748316c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database-libra-shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates-libra-shop/login-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates-libra-shop/login-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +63,7 @@
       <updated>1701319065525</updated>
       <workItem from="1701319066672" duration="478000" />
       <workItem from="1701319548597" duration="598000" />
+      <workItem from="1701337010445" duration="332000" />
     </task>
     <servers />
   </component>
