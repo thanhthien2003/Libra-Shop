@@ -20,12 +20,128 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd1cf3c-7fa7-4de4-bd52-e423748316c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Templates-libra-shop/login-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates-libra-shop/login-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/Cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/bootstrap/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/bootstrap/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/detail-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/Read Me.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/demo-files/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/demo-files/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/selection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/fonts/icomoon/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/_site-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/_site-blocks.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/_site-navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Templates-libra-shop/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates-libra-shop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates-libra-shop/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -45,11 +161,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -63,7 +180,8 @@
       <updated>1701319065525</updated>
       <workItem from="1701319066672" duration="478000" />
       <workItem from="1701319548597" duration="598000" />
-      <workItem from="1701337010445" duration="332000" />
+      <workItem from="1701337010445" duration="972000" />
+      <workItem from="1701402157060" duration="3029000" />
     </task>
     <servers />
   </component>
@@ -86,10 +204,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1701319546018">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1701402466307">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1701319546018" />
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1701402466307" />
     <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1701319246601">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
