@@ -19,7 +19,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd1cf3c-7fa7-4de4-bd52-e423748316c2" name="Default Changelist" comment="" />
+    <list default="true" id="abd1cf3c-7fa7-4de4-bd52-e423748316c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/LibraBeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/AccountRoles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Accounts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Brands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/ColorProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/ProductImages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/ProductReviews.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Products.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/SizeProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/TypeProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/java/com/example/librabe/model/WareHouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BE/Libra-BE/src/test/java/com/example/librabe/LibraBeApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FE" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -70,8 +97,24 @@
       <workItem from="1701319066672" duration="478000" />
       <workItem from="1701319548597" duration="598000" />
       <workItem from="1701337010445" duration="972000" />
-      <workItem from="1701402157060" duration="3438000" />
+      <workItem from="1701402157060" duration="3892000" />
+      <workItem from="1701739452905" duration="36000" />
     </task>
+    <task id="LOCAL-00001" summary="[ThienPT][Update templates detail product and cart]">
+      <created>1701406691719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701406691719</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[ThienPT][Update templates detail product and cart]">
+      <created>1701406879750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701406879750</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,15 +134,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="[ThienPT][Update templates detail product and cart]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ThienPT][Update templates detail product and cart]" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1701402466307">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1701739483214">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1701402466307" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1701319246601">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1701739483214" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1701406701054">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1701319246601" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1701406701054" />
   </component>
 </project>
