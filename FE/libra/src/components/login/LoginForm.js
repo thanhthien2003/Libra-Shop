@@ -1,10 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
+import { Formik, Form, Field, ErrorMessage} from "formik";
+import * as Yup from "yup";
+import Swal from "sweetalert2"
+import {toast} from "react-toastify";
+import { addJwtTokenToLocalStorage, loginUser } from "../../service/AccountService";
 
 function LoginForm(){
+  const navigate = useNavigate();
+  const handleLogin = async (account) => {
+       const res = await loginUser(account);
+        addJwtTokenToLocalStorage(res.data.token)
+        console.log(res);
+        navigate("/");
+        toast("Login success!")
+  }
     return(
         <>
-         <div style={{background:'linear-gradient(90deg, rgba(208,243,245,1) 42%, rgba(14,233,242,1) 100%)',height: 100 + 'vh'}}>
+         <div>
         <div className="container-fluid">
           <div className="row">
           <Link to={"/"} style={{marginTop:5,marginLeft:10}} type="button" class="btn btn-dark">Back</Link>
@@ -14,23 +27,42 @@ function LoginForm(){
           <div className="row">
             <div className="login-box">
               <p>Login</p>
-              <form>
+              <Formik
+              initialValues={{
+                userName:"",
+                pass:""
+              }}
+
+              validationSchema={Yup.object({
+                userName: Yup.string()
+                    .required("Can not required"),
+                    pass: Yup.string()
+                    .required("Can not required")
+            })}
+
+            onSubmit={(values) => {
+                  handleLogin(values)
+            }}
+              >
+              <Form>
                 <div className="user-box">
-                  <input required name type="text" />
-                  <label>Email</label>
+                  <Field  name="userName" id="userName" type="text" />
+                  <label htmlFor="userName">Username</label>
+                
                 </div>
                 <div className="user-box">
-                  <input required name type="password" />
-                  <label>Password</label>
+                  <Field  name="pass" id="pass" type="password" />
+                  <label htmlFor="pass">Password</label>
                 </div>
-                <a href="index.html">
+                <button className="btn" style={{backgroundColor:"whiteSmoke"}} type="submit">
                   <span />
                   <span />
                   <span />
                   <span />
-                  Submit
-                </a>
-              </form>
+                  Sign in !
+                </button>
+              </Form>
+              </Formik>
               <p>Don't have an account? <a href className="a2">Sign up!</a></p>
             </div>
           </div>

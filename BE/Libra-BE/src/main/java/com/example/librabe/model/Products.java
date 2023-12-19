@@ -16,6 +16,7 @@ import javax.persistence.*;
 public class Products {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name_products")
@@ -28,21 +29,13 @@ public class Products {
     private String image;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
     @ManyToOne
-    @JoinColumn(name = "color_id", referencedColumnName = "id")
-    private ColorProduct colorId;
+    @JoinColumn(name = "product_detail_id", referencedColumnName = "id")
+    private ProductDetail productDetailId;
 
-    @ManyToOne
-    @JoinColumn(name = "brands_id", referencedColumnName = "id")
-    private Brands brandsId;
-
-    @ManyToOne
-    @JoinColumn(name = "type_product_id", referencedColumnName = "id")
-    private TypeProduct typeProductId;
-    @ManyToOne
-    @JoinColumn(name = "size_id", referencedColumnName = "id")
-    private SizeProduct sizeId;
-
+    public Products(Integer id) {
+        this.id = id;
+    }
 }

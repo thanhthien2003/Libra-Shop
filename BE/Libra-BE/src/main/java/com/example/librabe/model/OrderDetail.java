@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
 @Entity
 @Getter
 @Setter
@@ -16,6 +15,7 @@ import javax.persistence.*;
 public class OrderDetail {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "quantity")
@@ -29,6 +29,6 @@ public class OrderDetail {
     private Products productId;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 }
 

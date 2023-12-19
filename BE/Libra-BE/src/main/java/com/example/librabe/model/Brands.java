@@ -16,12 +16,13 @@ import javax.persistence.*;
 public class Brands {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name_brands")
     private String nameBrands;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
 }

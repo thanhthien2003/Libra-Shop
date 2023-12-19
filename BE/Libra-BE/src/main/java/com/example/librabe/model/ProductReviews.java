@@ -16,6 +16,7 @@ import javax.persistence.*;
 public class ProductReviews {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "rating")
@@ -32,10 +33,10 @@ public class ProductReviews {
     private Products productId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
-    private Customer customerId;
+    @JoinColumn(name = "account_id", referencedColumnName = "id_account")
+    private Accounts accountId;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
 }

@@ -2,83 +2,153 @@ import Header from "./Header.js";
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
 import Card from "./Card.js";
+import Cards from "./Card.js";
+import { bestSallerList, getAllProduct, newProductList } from "../../service/ProductService.js";
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Home() {
-  const [list,setList] = useState([1,2,3,4]);
-    return(
-        <>
-    <Header/>
-         <div className="main-banner" id="top" >
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="left-content" >
-              <div className="thumb">
-                <div className="inner-content " >
-                  <h4>We Are Libra</h4>
-                  <span>We bring sophistication</span>
-                  <div className="main-border-button">
-                    <a href="#">Find out now!</a>
+  const [list, setList] = useState([1, 2, 3, 4]);
+  const [listProduct, setListProduct] = useState(null);
+  const [listBestSaller,setListBestSaller] = useState(null);
+  const [listNewProduct,setListNewProduct] = useState(null);
+
+  const handleGetBestSaller = async () => {
+    setListBestSaller(await bestSallerList());
+  }
+
+  const handleGetNewProduct = async () => {
+    setListNewProduct(await newProductList());
+  }
+
+  // const handleGetList = async () => {
+  //     setListProduct(await getAllProduct());
+  // }
+  console.log("listBest",listBestSaller);
+  console.log("listNew",listNewProduct);
+
+  useEffect(() => {
+      handleGetBestSaller();
+      handleGetNewProduct();
+  },[])
+  if(listBestSaller == null){
+    return null;
+  }
+  if(listNewProduct === null){
+    return null;
+  }
+  return (
+    <>
+      <Header />
+      <div className="main-banner" id="top" >
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="left-content" >
+                <div className="thumb">
+                  <div className="inner-content " >
+                    <h4 style={{color:"whiteSmoke"}}>Libra Shop</h4>
+                    <span>We have many product what you need!</span>
+                    {/* <div className="main-border-button">
+                      <a href="#">Find out now!</a>
+                    </div> */}
                   </div>
+                  <div className="text-center">
+                    <img style={{ width: "100%", height: "600px" }} src="https://www.diakoniewerkstaetten.de/fileadmin/redaktion/Menschen/Arbeitsbereiche/Second_Hand-1124706124.jpg" alt="" />
+                  </div>
+
                 </div>
-                <img src="assets/images/left-banner-image.jpg" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    {/* <!-- ***** Main Banner Area End ***** -->
+      {/* <!-- ***** Main Banner Area End ***** -->
 
 <!-- ***** Men Area Starts ***** --> */}
 
-    
-<section className="section" id="men">
+
+      <section className="section" id="men">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <div className="section-heading">
-                <h2>Men's Latest</h2>
+                <h2>Best Saller</h2>
                 <span>Details to details is what makes Hexashop different from the other themes.</span>
               </div>
             </div>
           </div>
         </div>
         <div className="reponsive-cardThienPT" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '3rem', padding: '1rem 3.2rem 1rem 3.2rem' }}>
-      {list.map((card) => {
-        return(
-          <>
-          <Card element={card} />
-          </>
-        )
-      })}
-      </div>
+          { listBestSaller !== undefined && 
+            listBestSaller.map((card, index) => {
+              return (
+                <div key={index}
+                  style={{ textAlign: "center" }}>
+                  <Cards element={card} />
+                </div>
+              )
+            })
+          }
+        </div>
       </section>
 
       {/* <!-- ***** Men Area Ends ***** -->
 
 <!-- ***** Women Area Starts ***** --> */}
 
-<section className="section" id="women">
+      <section className="section" id="women">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <div className="section-heading">
-                <h2>Women's Latest</h2>
+                <h2>New Product</h2>
                 <span>Details to details is what makes Hexashop different from the other themes.</span>
               </div>
             </div>
           </div>
         </div>
         <div className="reponsive-cardThienPT" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '3rem', padding: '1rem 3.2rem 1rem 3.2rem' }}>
-      {list.map((card) => {
-        return(
-          <>
-           <Card element={card} />
-          </>
-        )
-      })}
-      </div>
+          {/* <Swiper
+          slidesPerView={4}
+          spaceBetween={10}
+          freeMode={true}
+          autoplay={{
+            delay:2000,
+            disableOnInteraction:false,
+          }}
+          pagination={{
+            clickable:true
+          }}
+          modules={[FreeMode,Pagination,Autoplay]}
+          className="mySwiper"
+          >
+          {listNewProduct.map((card) => {
+            
+            return (
+              <>
+              <SwiperSlide>
+                <Card element={card} />
+                </SwiperSlide> 
+              </>
+            )
+           
+          })
+          }
+          </Swiper> */}
+          {listNewProduct !== undefined && listNewProduct.map((card) => {
+            return (
+              <>
+                <Card element={card} />
+              </>
+            )
+           
+          })
+          }
+        </div>
       </section>
 
       {/* <!-- ***** Women Area Ends ***** -->
@@ -86,7 +156,7 @@ function Home() {
 
     <!-- ***** Explore Area Starts ***** --> */}
 
-<section className="section" id="explore">
+      <section className="section" id="explore">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -139,7 +209,7 @@ function Home() {
 
 <!-- ***** Social Area Starts ***** --> */}
 
-<section className="section" id="social">
+      <section className="section" id="social">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -226,7 +296,7 @@ function Home() {
 
     <!-- ***** Subscribe Area Starts ***** --> */}
 
-<div className="subscribe">
+      <div className="subscribe">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -279,8 +349,8 @@ function Home() {
       {/* <!-- ***** Subscribe Area Ends ***** -->
     
     <!-- ***** Footer Start ***** --> */}
-        </>
-    )
+    </>
+  )
 }
 
 export default Home;

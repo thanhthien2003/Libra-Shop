@@ -16,12 +16,13 @@ import javax.persistence.*;
 public class SizeProduct {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name_size")
     private String nameSize;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
 }

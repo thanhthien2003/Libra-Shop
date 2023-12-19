@@ -16,16 +16,17 @@ import javax.persistence.*;
 public class Orders {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "date_order")
     private String dateOrder;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
     @ManyToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id")
+    @JoinColumn(name = "account_id", referencedColumnName = "id_account")
     private Accounts accountId;
 
     @Column(name = "total_amount")

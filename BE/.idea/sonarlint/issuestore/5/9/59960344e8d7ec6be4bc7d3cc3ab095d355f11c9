@@ -1,0 +1,13 @@
+
+u
+java:S1192<"YDefine a constant instead of duplicating this literal "Error: Role is not found" 3 times.(ÜÄå"8ûŞÁ¿Å1
+g
+java:S1301@"KReplace this "switch" statement by "if" statements to increase readability.(¶„æ8ûŞÁ¿Å1
+C
+java:S1452."&Remove usage of generic wildcard type.(¥ÙÏ‚8£ßÁ¿Å1
+m	java:S128A"LEnd this switch case with an unconditional break, return or throw statement.(ÜÛàúÿÿÿÿ8«ßÁ¿Å1
+=	java:S131@""Add a default case to this switch.(¶„æ8«ßÁ¿Å1
+H
+java:S1452R"&Remove usage of generic wildcard type.(ŒÆÔ§úÿÿÿÿ8­ßÁ¿Å1
+C
+java:S1452f"&Remove usage of generic wildcard type.(Òºè8—åß’Æ1

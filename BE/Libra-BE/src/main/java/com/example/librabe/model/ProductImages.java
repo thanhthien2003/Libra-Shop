@@ -16,13 +16,14 @@ import javax.persistence.*;
 public class ProductImages {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name_image")
     private String nameImage;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")

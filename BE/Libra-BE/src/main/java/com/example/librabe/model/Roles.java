@@ -15,13 +15,13 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Roles {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_role")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "name_role")
-    private String nameRole;
+    @Enumerated(EnumType.STRING)
+    private ERole roleName;
 
     @Column(name = "is_flag")
-    private Byte isFlag;
+    private Boolean isFlag;
 
 }

@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
 import Footer from "../home/Footer";
 import Header from "../home/Header";
+import { detailProduct } from "../../service/ProductService";
 
 
-function DetailProduct(){
+function DetailProduct({product}){
+  const [productDetail,setProductDetail] = useState(null);
+  const handleGetProduct = async () => {
+    setProductDetail(await detailProduct(product.idProduct));
+  }
+  useEffect(() => {
+    handleGetProduct()
+  },[]);
+
+  if(productDetail === null){
+    return null;
+  }
+  console.log(productDetail);
     return(
         <>
         <Header />
