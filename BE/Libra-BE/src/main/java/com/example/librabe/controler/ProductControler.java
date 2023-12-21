@@ -1,9 +1,8 @@
 package com.example.librabe.controler;
 
 import com.example.librabe.dto.IProductDto;
-import com.example.librabe.model.Accounts;
-import com.example.librabe.model.Products;
-import com.example.librabe.service.IProductService;
+import com.example.librabe.model.*;
+import com.example.librabe.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,6 +20,14 @@ import java.util.List;
 public class ProductControler {
     @Autowired
     private IProductService iProductService;
+    @Autowired
+    private IBrandService brandService;
+    @Autowired
+    private ITypeService typeService;
+    @Autowired
+    private ISizeService sizeService;
+    @Autowired
+    private IColorService colorService;
 
     @GetMapping("")
     public ResponseEntity<?> getAll (
@@ -35,12 +42,14 @@ public class ProductControler {
     ){
         Pageable pageable = null;
         if (sort.equals("asc")){
-             pageable = PageRequest.of(page,10,Sort.by("priceProduct").ascending());
+             pageable = PageRequest.of(page,8,Sort.by("priceProduct").ascending());
         } else {
-             pageable = PageRequest.of(page,10,Sort.by("priceProduct").descending());
+             pageable = PageRequest.of(page,8,Sort.by("priceProduct").descending());
         }
         Page<IProductDto> products = null;
-
+//        if (name == null){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
         if (price == 0) {
             products = iProductService.getAllNoPrice(name, brand, color, size, type, pageable);
         } else {
@@ -56,11 +65,14 @@ public class ProductControler {
         return new ResponseEntity<>(products,HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{idProduct}")
     public ResponseEntity<?> detailProduct(
-            @PathVariable(value = "id",required = false) Integer id
+            @PathVariable(value = "idProduct",required = false) Integer idProduct
     ){
-        IProductDto productDto = iProductService.getByIdProduct(id);
+        if (idProduct == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        IProductDto productDto = iProductService.getDetailProduct(idProduct);
             if (productDto == null){
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
@@ -83,6 +95,42 @@ public class ProductControler {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(products,HttpStatus.OK);
+    }
+
+    @GetMapping("/type")
+    public ResponseEntity<?> getAllType (){
+        List<TypeProduct> typeList = typeService.getAllType();
+        if (typeList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(typeList,HttpStatus.OK);
+    }
+
+    @GetMapping("/size")
+    public ResponseEntity<?> getAllSize (){
+        List<SizeProduct> sizeList = sizeService.getAllSize();
+        if (sizeList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(sizeList,HttpStatus.OK);
+    }
+
+    @GetMapping("/brands")
+    public ResponseEntity<?> getAllBrand (){
+        List<Brands> brandList = brandService.getAllBrand();
+        if (brandList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(brandList,HttpStatus.OK);
+    }
+
+    @GetMapping("/color")
+    public ResponseEntity<?> getAllColor (){
+        List<ColorProduct> colorList = colorService.getColor();
+        if (colorList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(colorList,HttpStatus.OK);
     }
 
 }

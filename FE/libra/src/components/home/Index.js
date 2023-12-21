@@ -9,6 +9,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Footer from "./Footer.js";
 
 function Home() {
   const [list, setList] = useState([1, 2, 3, 4]);
@@ -71,13 +72,13 @@ function Home() {
 <!-- ***** Men Area Starts ***** --> */}
 
 
-      <section className="section" id="men">
+      <section className="section" id="best">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <div className="section-heading">
                 <h2>Best Saller</h2>
-                <span>Details to details is what makes Hexashop different from the other themes.</span>
+                <span>These are the most popular products at libra shop.</span>
               </div>
             </div>
           </div>
@@ -100,13 +101,13 @@ function Home() {
 
 <!-- ***** Women Area Starts ***** --> */}
 
-      <section className="section" id="women">
+      <section className="section" id="new">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <div className="section-heading">
                 <h2>New Product</h2>
-                <span>Details to details is what makes Hexashop different from the other themes.</span>
+                <span>These are the latest products at libra shop.</span>
               </div>
             </div>
           </div>
@@ -345,7 +346,7 @@ function Home() {
           </div>
         </div>
       </div>
-
+    <Footer />
       {/* <!-- ***** Subscribe Area Ends ***** -->
     
     <!-- ***** Footer Start ***** --> */}

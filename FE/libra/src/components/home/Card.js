@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import {toast} from "react-toastify";
 import { FaCartShopping } from "react-icons/fa6";
@@ -7,41 +7,55 @@ import { infoAccountByJwtToken } from '../../service/AccountService';
 import { addToCart } from '../../service/CartService';
 
 function Cards ({element}) {
-    const [userName,setUserName] = useState("");
-    const cart={
-            quantity : 1,
-            userName : userName,
-            productId : element.idProduct
+    // const [userName,setUserName] = useState("");
+    const navigate = useNavigate();
+    // const userName = infoAccountByJwtToken().sub;
+    // const cart={
+    //         quantity : 1,
+    //         userName : userName,
+    //         productId : element.idProduct
+    // }
+    // const handleGetUserName = async () => {
+    //     const res = await infoAccountByJwtToken();
+    //     if (res !== undefined) {
+    //         setUserName(res.sub);
+    //     }
+    // }
+    // console.log(userName);
+    // console.log(cart);
+    const handleDetail = () => {
+        navigate(`/detail/${element.idProduct}`)
     }
-    const handleGetUserName = async () => {
-        const res = await infoAccountByJwtToken();
-        if (res !== undefined) {
-            setUserName(res.sub);
-        }
-    }
-    console.log(userName);
-    console.log(cart);
 
     const handleAddToCart = async () => {
-        const res = await addToCart(cart)
-        console.log(res);
+        const token = await infoAccountByJwtToken();
+        console.log("token",token);
+        if(token === undefined){
+            navigate("/login");
+        }else{
+        const res = await addToCart({
+            quantity : 1,
+            userName : token.sub,
+            productId : element.idProduct})
+            console.log(res);
         if(res.status == 201){
             toast("Add to cart success")
         } else{
             toast.error("Fail add to cart")
         }
+        }
     }
 
     useEffect(() => {
-        handleGetUserName()
-    },[userName])
+        // handleGetUserName()
+    },[])
     
     return(
         <>
-             <Card className="my-card" >
+             <Card className="my-card">
             <i>
                 <Card.Img variant="top" style={{width: '100%', height: "300px"}}
-                          src={`${element.imageProduct}`}/>
+                          src={`${element.imageProduct}`} onClick={handleDetail}/>
             </i>
             <Card.Body>
                 <Card.Title>

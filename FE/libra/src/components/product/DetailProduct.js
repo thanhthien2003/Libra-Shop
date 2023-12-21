@@ -2,16 +2,24 @@ import { useEffect, useState } from "react";
 import Footer from "../home/Footer";
 import Header from "../home/Header";
 import { detailProduct } from "../../service/ProductService";
+import { useParams } from "react-router-dom";
 
 
-function DetailProduct({product}){
-  const [productDetail,setProductDetail] = useState(null);
+function DetailProduct(){
+  const param = useParams();
+  const [productDetail,setProductDetail] = useState({});
   const handleGetProduct = async () => {
-    setProductDetail(await detailProduct(product.idProduct));
+    const res = await detailProduct(param.id);
+    console.log("res",res);
+    if(res.status === 400){
+      setProductDetail(undefined)
+    }
+    setProductDetail(res);
   }
   useEffect(() => {
     handleGetProduct()
   },[]);
+  console.log("param",param);
 
   if(productDetail === null){
     return null;

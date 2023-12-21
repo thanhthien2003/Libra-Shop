@@ -9,11 +9,11 @@ function Footer() {
       <div className="col-lg-3">
         <div className="first-item">
           <div className="logo">
-            <img src="assets/images/logoLibra.png" alt="hexashop ecommerce templatemo" />
+            <img src="assets/images/logoLibra.png" alt="libra ecommerce templatemo" />
           </div>
           <ul>
             <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-            <li><a href="#">hexashop@company.com</a></li>
+            <li><a href="#">libraShop@company.com</a></li>
             <li><a href="#">010-020-0340</a></li>
           </ul>
         </div>
@@ -21,9 +21,9 @@ function Footer() {
       <div className="col-lg-3">
         <h4>Shopping &amp; Categories</h4>
         <ul>
-          <li><a href="#">Men’s Shopping</a></li>
-          <li><a href="#">Women’s Shopping</a></li>
-          <li><a href="#">Kid's Shopping</a></li>
+          <li><a href="#">Hoddie</a></li>
+          <li><a href="#">Blazer</a></li>
+          <li><a href="#">Tanktop</a></li>
         </ul>
       </div>
       <div className="col-lg-3">

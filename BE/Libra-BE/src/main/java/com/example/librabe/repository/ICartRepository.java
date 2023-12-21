@@ -26,6 +26,7 @@ public interface ICartRepository extends JpaRepository<Cart,Integer> {
     @Modifying
     @Query(value = "delete from cart c where (c.product_id = :productId and c.account_id = :accountId) ",nativeQuery = true)
     void deleteCart(Integer productId,Integer accountId);
+
     @Query(value = "SELECT min(acc.name_customer) as nameAccount,min(acc.user_name) as userName, min(p.price) as price " +
             ",sum(c.quantity) as quantityCart, " +
             "min(p.id) as productId , min(p.name_products) as nameProduct , min(p.image) as imageProduct " +

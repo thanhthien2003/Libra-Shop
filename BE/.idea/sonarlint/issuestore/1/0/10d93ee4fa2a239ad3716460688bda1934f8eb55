@@ -1,13 +1,18 @@
 
 H
-java:S1452"&Remove usage of generic wildcard type.(È£×ıÿÿÿÿ8ã¦äáÇ1
+java:S1452!"&Remove usage of generic wildcard type.(È£×ıÿÿÿÿ8¨Ó«È1
+X	java:S1252"<This block of commented-out lines of code should be removed.(©Ü–¦8­Ó«È1
 C
-java:S1452<"&Remove usage of generic wildcard type.(Ë‘ö´8ç¦äáÇ1
+java:S1452E"&Remove usage of generic wildcard type.(Ë‘ö´8°Ó«È1
 H
-java:S1452G"&Remove usage of generic wildcard type.(¶±èûÿÿÿÿÿ8è¦äáÇ1
+java:S1452S"&Remove usage of generic wildcard type.(¶±èûÿÿÿÿÿ8±Ó«È1
 H
-java:S1452P"&Remove usage of generic wildcard type.(Çõ§üÿÿÿÿÿ8é¦äáÇ1
-a
-java:S1128"?Remove this unused import 'com.example.librabe.model.Accounts'.(öû•Æúÿÿÿÿ8é¦äáÇ1
-\
-java:S1128"?Remove this unused import 'com.example.librabe.model.Products'.(İÀ¿È8é¦äáÇ1
+java:S1452\"&Remove usage of generic wildcard type.(Çõ§üÿÿÿÿÿ8²Ó«È1
+C
+java:S1452e"&Remove usage of generic wildcard type.(ˆ«í±8´Ó«È1
+H
+java:S1452n"&Remove usage of generic wildcard type.(šÚşùÿÿÿÿ8ùÊÕ«È1
+C
+java:S1452w"&Remove usage of generic wildcard type.(ı¼°™8Ì¿Ø«È1
+D
+java:S1452€"&Remove usage of generic wildcard type.(ß´„™8‡Æğ«È1

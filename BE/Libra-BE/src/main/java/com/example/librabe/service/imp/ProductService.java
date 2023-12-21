@@ -24,10 +24,6 @@ public class ProductService implements IProductService {
         return productRepository.getAllNoPrice(name,brand,color,size,type,pageable);
     }
 
-    @Override
-    public IProductDto getByIdProduct(Integer id) {
-        return productRepository.getByIdProduct(id);
-    }
 
     @Override
     public List<IProductDto> getListBestSaller() {
@@ -37,5 +33,10 @@ public class ProductService implements IProductService {
     @Override
     public List<IProductDto> getListNewProduct() {
         return productRepository.getListNewProduct();
+    }
+
+    @Override
+    public IProductDto getDetailProduct(Integer idProduct) {
+        return productRepository.getDetailProduct(idProduct);
     }
 }

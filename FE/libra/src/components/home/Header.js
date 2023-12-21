@@ -11,6 +11,7 @@ import CartIcon from "../CartIcon";
 
 function Header() {
     const [userName, setUserName] = useState(null);
+    // const userName = infoAccountByJwtToken().sub;
     const navigate = useNavigate();
     const [JwtToken, setJwtToken] = useState(localStorage.getItem("JWT"));
     const handleGetUserName = async () => {
@@ -29,7 +30,7 @@ function Header() {
     console.log(userName);
     useEffect(() => {
         handleGetUserName();
-    }, [])
+    },[userName])
 
 
     return (
@@ -39,13 +40,13 @@ function Header() {
                     <div className="row">
                         <div className="col-12">
                             <nav className="main-nav">
-                                <a href="index.html" className="logo">
+                                <Link to={"/"} className="logo">
                                     <img style={{ width: 30 + '%' }} src="../../images/logoLibra.png" />
-                                </a>
+                                </Link>
                                 <ul className="nav">
                                     <li><Link to={"/"}>Home</Link></li>
-                                    <li className="scroll-to-section"><a href="#men">Men's</a></li>
-                                    <li className="scroll-to-section"><a href="#women">Women's</a></li>
+                                    {/* <li className="scroll-to-section"><Link href="#saller">Best Saller</Link></li>
+                                    <li className="scroll-to-section"><Link href="#new">New Product</Link></li> */}
                                     <li><Link to={"/product"}>Product</Link></li>
                                     <li className="submenu">
                                         <a href="javascript:">Pages</a>
@@ -78,14 +79,14 @@ function Header() {
                                            <Dropdown >
                                             <Dropdown.Toggle  style={{padding: "0 0", border: "none", backgroundColor: "transparent"}}>
                                                  <li>
-                                                  <a  href="#offcanvas-about">
+                                                  <a>
                                                   <RxAvatar />   {userName}
                                                     </a>  
                                                 </li>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="/history">
-                                                    <div  style={{ color: "black" }}><BiHistory /> History </div>
+                                                <Dropdown.Item>
+                                                    <Link to={"/history"}  style={{ color: "black" }}><BiHistory /> History </Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item href="/customer">
                                                     <div ><BsInfoSquare />Information</div>

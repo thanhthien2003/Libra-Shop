@@ -17,7 +17,7 @@ public interface IProductRepository extends JpaRepository<Products,Integer> {
     @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ," +
             "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ," +
             "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct" +
-            " from products p join product_detail pd on p.id = pd.id " +
+            " from products p join product_detail pd on p.product_detail_id = pd.id " +
             "join brands b on pd.brands_id = b.id " +
             "join color_product cp on pd.color_id = cp.id " +
             "join size_product s on pd.size_id = s.id " +
@@ -33,7 +33,7 @@ public interface IProductRepository extends JpaRepository<Products,Integer> {
     @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ," +
             "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ," +
             "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct" +
-            " from products p join product_detail pd  on p.id = pd.id " +
+            " from products p join product_detail pd  on p.product_detail_id = pd.id " +
             "join brands b on pd.brands_id = b.id " +
             "join color_product cp on pd.color_id = cp.id " +
             "join size_product s on pd.size_id = s.id " +
@@ -45,20 +45,11 @@ public interface IProductRepository extends JpaRepository<Products,Integer> {
             "and t.name_type like CONCAT('%', :type, '%')) ",nativeQuery = true)
     Page<IProductDto> getAllNoPrice(String name,String brand,String color,String size,String type,Pageable pageable);
 
-    @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ," +
-            "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ," +
-            "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct" +
-            " from products p join product_detail pd  on p.id = pd.id " +
-            "join brands b on pd.brands_id = b.id " +
-            "join color_product cp on pd.color_id = cp.id " +
-            "join size_product s on pd.size_id = s.id " +
-            "join type_product t on pd.type_product_id = t.id where p.is_flag = 0 and p.id = :id",nativeQuery = true)
-    IProductDto getByIdProduct(Integer id);
 
     @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ," +
             "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ," +
             "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct , sum(od.quantity) as bestSaler " +
-            " from products p join product_detail pd  on p.id = pd.id " +
+            " from products p join product_detail pd  on p.product_detail_id = pd.id " +
             "join brands b on pd.brands_id = b.id " +
             "join color_product cp on pd.color_id = cp.id " +
             "join size_product s on pd.size_id = s.id " +
@@ -73,7 +64,7 @@ public interface IProductRepository extends JpaRepository<Products,Integer> {
     @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ," +
             "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ," +
             "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct  " +
-            " from products p join product_detail pd  on p.id = pd.id " +
+            " from products p join product_detail pd  on p.product_detail_id = pd.id " +
             "join brands b on pd.brands_id = b.id " +
             "join color_product cp on pd.color_id = cp.id " +
             "join size_product s on pd.size_id = s.id " +
@@ -81,4 +72,15 @@ public interface IProductRepository extends JpaRepository<Products,Integer> {
             "where (p.is_flag = 0) " +
             "order by p.id DESC  LIMIT 4 ",nativeQuery = true)
     List<IProductDto> getListNewProduct();
+
+    @Query(value = "select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct , " +
+            "p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct , " +
+            "cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct " +
+            "from products p join product_detail pd on p.product_detail_id = pd.id " +
+            "join brands b on pd.brands_id = b.id  " +
+            "join color_product cp on pd.color_id = cp.id  " +
+            "join size_product s on pd.size_id = s.id " +
+            "join type_product t on pd.type_product_id = t.id " +
+            "where (p.is_flag = 0 and p.id = :idProduct) ",nativeQuery = true)
+    IProductDto getDetailProduct(Integer idProduct);
 }
