@@ -107,4 +107,14 @@ public class AccountControler {
         return new ResponseEntity<>(acc,HttpStatus.OK);
     }
 
+    @PatchMapping("/update")
+    public  ResponseEntity<?> updateAccount(
+            @RequestBody Accounts accounts
+    ){
+        if (accounts == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        accountService.updateAccount(accounts);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

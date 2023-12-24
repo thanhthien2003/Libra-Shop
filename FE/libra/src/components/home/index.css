@@ -141,6 +141,7 @@
             max-height: 500px;
             border: 1px solid black;
             border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.24) 4px 4px 4px 4px;
         }
         .my-card:hover {
             cursor: pointer;
@@ -179,6 +180,6 @@
             -webkit-line-clamp: 1; /* number of lines to show */
             line-clamp: 2;
             -webkit-box-orient: vertical;
-            font-size: 15px;
+            font-size: 20px;
         }
         

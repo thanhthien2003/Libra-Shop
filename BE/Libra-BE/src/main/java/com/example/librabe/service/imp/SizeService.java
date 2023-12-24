@@ -17,4 +17,9 @@ public class SizeService implements ISizeService {
     public List<SizeProduct> getAllSize() {
         return sizeRepository.findAll();
     }
+
+    @Override
+    public List<SizeProduct> getAllSizeOfProduct(String nameType) {
+        return sizeRepository.getAllSizeOfProduct(nameType);
+    }
 }

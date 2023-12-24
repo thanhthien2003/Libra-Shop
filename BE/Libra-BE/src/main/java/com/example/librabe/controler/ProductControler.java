@@ -133,4 +133,49 @@ public class ProductControler {
         return new ResponseEntity<>(colorList,HttpStatus.OK);
     }
 
+    @GetMapping("/type-of-product")
+    public ResponseEntity<?> getAllTypeOfProduct (
+            @RequestParam(value = "nameProduct",required = false,defaultValue = "") String nameProduct
+    ){
+        List<TypeProduct> typeList = typeService.getAllTypeOfProduct(nameProduct);
+        if (typeList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(typeList,HttpStatus.OK);
+    }
+
+    @GetMapping("/size-of-product")
+    public ResponseEntity<?> getAllSizeOfProduct (
+            @RequestParam(value = "nameType",required = false,defaultValue = "") String nameType
+    ){
+        List<SizeProduct> sizeList = sizeService.getAllSizeOfProduct(nameType);
+        if (sizeList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(sizeList,HttpStatus.OK);
+    }
+
+    @GetMapping("/color-of-product")
+    public ResponseEntity<?> getAllColorOfProduct (
+            @RequestParam(value = "nameProduct",required = false,defaultValue = "") String nameProduct
+    ){
+        List<ColorProduct> colorList = colorService.getAllColorOfProduct(nameProduct);
+        if (colorList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(colorList,HttpStatus.OK);
+    }
+
+    @GetMapping("/brand-of-product")
+    public ResponseEntity<?> getAllBrandOfProduct (
+            @RequestParam(value = "nameProduct",required = false,defaultValue = "") String nameProduct
+    ){
+        List<Brands> brandList = brandService.getAllBrandOfProduct(nameProduct);
+        if (brandList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(brandList,HttpStatus.OK);
+    }
+
+
 }

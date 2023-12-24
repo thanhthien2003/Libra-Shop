@@ -30,6 +30,8 @@ public class Products {
 
     @Column(name = "is_flag")
     private Boolean isFlag;
+    @Column(name = "quantity")
+    private Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "product_detail_id", referencedColumnName = "id")

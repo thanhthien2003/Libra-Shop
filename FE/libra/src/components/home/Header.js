@@ -8,9 +8,11 @@ import { BsInfoSquare } from "react-icons/bs";
 import { BiLogOut, BiHistory } from "react-icons/bi";
 import { RxAvatar } from "react-icons/rx";
 import CartIcon from "../CartIcon";
+import { getAllTotalCart } from "../../service/CartService";
 
 function Header() {
-    const [userName, setUserName] = useState(null);
+    const [userName, setUserName] = useState("");
+    const [totalItem,setTotalItem] = useState(0);
     // const userName = infoAccountByJwtToken().sub;
     const navigate = useNavigate();
     const [JwtToken, setJwtToken] = useState(localStorage.getItem("JWT"));
@@ -20,17 +22,26 @@ function Header() {
             setUserName(res.sub);
         }
     }
+  
+    const handleGetAllCart = async () => {
+        if (userName !== "") {
+          const res = await getAllTotalCart(userName);
+          setTotalItem(res);
+        } else {
+          setTotalItem(0);
+        }
+      }
 
     const handleLogout = () => {
         localStorage.removeItem("JWT");
-        setUserName(null);
+        setUserName("");
         setJwtToken(undefined)
         toast("Log out success")
     }
-    console.log(userName);
     useEffect(() => {
         handleGetUserName();
-    },[userName])
+        handleGetAllCart();
+    },[userName,totalItem])
 
 
     return (
@@ -70,9 +81,10 @@ function Header() {
                                     <li className="scroll-to-section">
                                         <div>
                                         <CartIcon />
+                                        <span className="cart__product-quantity">{totalItem >= 50 ? '+50' : totalItem}</span>
                                         </div>
                                     </li>
-                                    {userName === null ?
+                                    {userName === "" ?
                                         <li><Link to={"/login"}>Login</Link></li>
                                         :
                                         <div style={{marginBottom: "20px"}}>
@@ -88,8 +100,8 @@ function Header() {
                                                 <Dropdown.Item>
                                                     <Link to={"/history"}  style={{ color: "black" }}><BiHistory /> History </Link>
                                                 </Dropdown.Item>
-                                                <Dropdown.Item href="/customer">
-                                                    <div ><BsInfoSquare />Information</div>
+                                                <Dropdown.Item>
+                                                    <Link to={"/customer"} ><BsInfoSquare />Information</Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item>
                                                     <div  onClick={() => handleLogout()}><BiLogOut /> Đăng xuất</div>

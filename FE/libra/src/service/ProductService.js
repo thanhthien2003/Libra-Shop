@@ -39,3 +39,23 @@ export const getColorList = async () => {
         const res = await axios.get(`http://localhost:8080/api/product/color`)
         return res.data;
 }
+
+export const getBrandListOfProduct = async (nameProduct) => {
+    const res = await axios.get(`http://localhost:8080/api/product/brand-of-product?nameProduct=${nameProduct}`)
+    return res.data;
+}
+
+export const getColorListOfProduct = async (nameProduct) => {
+    const res = await axios.get(`http://localhost:8080/api/product/color-of-product?nameProduct=${nameProduct}`)
+    return res.data;
+}
+
+export const getSizeListOfProduct = async (nameType) => {
+    const res = await axios.get(`http://localhost:8080/api/product/size-of-product?nameType=${nameType}`)
+    return res.data;
+}
+
+export const getTypeListOfProduct = async (nameProduct) => {
+    const res = await axios.get(`http://localhost:8080/api/product/type-of-product?nameType=${nameProduct}`)
+    return res.data;
+}

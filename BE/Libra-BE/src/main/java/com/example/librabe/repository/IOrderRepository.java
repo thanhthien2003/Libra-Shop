@@ -23,7 +23,7 @@ public interface IOrderRepository extends JpaRepository<Orders,Integer> {
     Integer getIdMaxForOrder();
 
     @Query(value = " select o.id as idOrder ,o.total_amount as totalAmount,o.account_id " +
-            "as accountId,o.date_order " +
+            "as accountId, SUBSTRING(o.date_order, 1, 10) " +
             "as dateOrder,a.address " +
             "as addressOrder,a.phone_number " +
             "as phoneNumber from orders o " +

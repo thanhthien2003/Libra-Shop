@@ -15,6 +15,8 @@ public interface IProductDto {
     String getColorProduct();
 
     String getSizeProduct();
+    Integer getIdType();
 
     String getTypeProduct();
+    Integer getQuantity();
 }

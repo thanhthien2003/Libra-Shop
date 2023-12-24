@@ -1,7 +1,40 @@
+import { useEffect, useState } from "react";
 import Footer from "../home/Footer";
 import Header from "../home/Header";
+import { getAllOrder, getAllOrderDetail } from "../../service/OrderService";
+import { infoAccountByJwtToken } from "../../service/AccountService";
+import { useNavigate } from "react-router-dom";
+import { IoInformation } from "react-icons/io5";
+import ModalDetail from "./ModalDetail";
+
+
 
 function OrderHistory() {
+    const [historyOrderList,setHistoryOrderList] = useState([]);
+    const navigate = useNavigate();
+    const [detailOrder,setDetailOrder] = useState([]);
+    const [showModal,setShowModal] = useState(false);
+    const [idOrderSelect,setIdOrderSelect] = useState(0);
+    const handleGetListHistory = async () => {
+        const userName = infoAccountByJwtToken();
+        if(userName == undefined){
+            navigate("/login")
+        }
+            const res = await getAllOrder(userName.sub);
+            if(res.status === 200){
+                setHistoryOrderList(res.data);
+            } else{
+                setHistoryOrderList([]);
+            }
+    }
+    const setIdOrder = async (order) => {
+        setIdOrderSelect(order.idOrder)
+        setShowModal(true);
+    }
+
+    useEffect(() => {
+        handleGetListHistory()
+    },[idOrderSelect])
     return (
         <>
             <Header />
@@ -22,28 +55,48 @@ function OrderHistory() {
                             </div>
                         </div>
                         <div className="row mb-5">
-                            <form className="col-md-12" method="post">
+                            <div className="col-md-12">
                                 <div className="site-blocks-table">
                                     <table className="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th className="product-thumbnail">#</th>
-                                                <th className="product-thumbnail">Day Order</th>
-                                                <th className="product-price">Delivery address</th>
-                                                <th className="product-quantity">Phone number</th>
-                                                <th className="product-name">Total amount</th>
-                                                {/* <th className="product-remove">Remove</th> */}
+                                                <th  className="product-thumbnail table-dark">#</th>
+                                                <th className="product-thumbnail table-dark">Day Order</th>
+                                                <th className="product-price table-dark">Delivery address</th>
+                                                <th className="product-quantity table-dark">Phone number</th>
+                                                <th className="product-name table-dark">Total amount</th>
+                                                <th className="product-remove table-dark">Detail order</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {historyOrderList != [] && historyOrderList.map((order,index) => (
+                                                <>
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>{order.dateOrder}</td>
+                                                    <td>{order.addressOrder}</td>
+                                                    <td>{order.phoneNumber}</td>
+                                                    <td>${new Intl.NumberFormat().format(order.totalAmount)}</td>
+                                                    <td style={{textAlign:"center"}}>
+                                                        <button  class="btn btn-dark" onClick={() => setIdOrder(order)}>
+                                                            <IoInformation style={{scale:"1.4"}}/>
+                                                        </button></td>
+                                                </tr>
+                                                </>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <ModalDetail 
+            show={showModal}
+            setShow={setShowModal}
+            idOrder={idOrderSelect}
+            />
             <Footer />
         </>
     )

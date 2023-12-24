@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+.cart__product-quantity {
+  color: black;
+  position: absolute;
+  background: goldenrod;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  top: -1px;
+  /* right:; */
+  font-weight: 600;
+  font-size: 12px;
+}
+.btn-check:checked + #ThienPT  {
+  background-color: black;
+  color: whitesmoke;
+  /* Thêm các thuộc tính khác tùy ý */
+}

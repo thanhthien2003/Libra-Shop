@@ -1,7 +1,11 @@
 
 C
-java:S1452"&Remove usage of generic wildcard type.(ÎŸ’¼8îÈ«ßÇ1
+java:S1452 "&Remove usage of generic wildcard type.(ÎŸ’¼8ÈªõçÉ1
 C
-java:S1452)"&Remove usage of generic wildcard type.(ê ö 8ñÈ«ßÇ1
+java:S1452-"&Remove usage of generic wildcard type.(ê ö 8ÍªõçÉ1
+B
+java:S1452L"&Remove usage of generic wildcard type.(÷òşw8ÔªõçÉ1
 H
-java:S1452@"&Remove usage of generic wildcard type.(”èÉ²ıÿÿÿÿ8ôÈ«ßÇ1
+java:S1452s"&Remove usage of generic wildcard type.(”èÉ²ıÿÿÿÿ8×ªõçÉ1
+]
+java:S1128"@Remove this unused import 'org.springframework.beans.BeanUtils'.(ŠğÄÜ8ÙªõçÉ1

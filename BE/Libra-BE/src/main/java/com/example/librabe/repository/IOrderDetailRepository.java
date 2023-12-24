@@ -29,6 +29,6 @@ public interface IOrderDetailRepository extends JpaRepository<OrderDetail,Intege
             "as imageProduct from orders o " +
             "join order_detail od on od.order_id = o.id " +
             "join products p on p.id = od.product_id " +
-            "where (o.account_id = 1 and  o.id = 1) ",nativeQuery = true)
+            "where (o.account_id = :accountId and o.id = :orderId) ",nativeQuery = true)
     List<IOrderDetailDto> getAllOrderDetail(Integer accountId,Integer orderId);
 }

@@ -5,10 +5,7 @@ import com.example.librabe.dto.ICartDto;
 import com.example.librabe.dto.IOrderDto;
 import com.example.librabe.model.Accounts;
 import com.example.librabe.repository.IOrderRepository;
-import com.example.librabe.service.IAccountService;
-import com.example.librabe.service.ICartService;
-import com.example.librabe.service.IOrderDetailService;
-import com.example.librabe.service.IOrderService;
+import com.example.librabe.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +24,8 @@ public class OrderService implements IOrderService {
     private IOrderDetailService orderDetailService;
     @Autowired
     private ICartService cartService;
+    @Autowired
+    private IProductService productService;
     @Override
     public boolean createOrder(List<CartDtoPay> cartDto, String userName, Double totalAmount) {
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -41,6 +40,7 @@ public class OrderService implements IOrderService {
             Integer idOrder = iOrderRepository.getIdMaxForOrder();
             for (CartDtoPay c:cartDto) {
                 orderDetailService.createOrderDetail(c,idOrder);
+                productService.decreQuantity(c.getProductId(),c.getQuantityCart());
                 cartService.deleteCart(c.getProductId(),accounts.getId());
             }
         }catch (Exception e){

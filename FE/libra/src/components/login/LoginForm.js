@@ -2,9 +2,9 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { Formik, Form, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
-import Swal from "sweetalert2"
 import {toast} from "react-toastify";
-import { addJwtTokenToLocalStorage, loginUser } from "../../service/AccountService";
+import { addJwtTokenToLocalStorage, infoAccountByJwtToken, loginUser } from "../../service/AccountService";
+import { useEffect } from "react";
 
 function LoginForm(){
   const navigate = useNavigate();
@@ -15,6 +15,16 @@ function LoginForm(){
         navigate("/");
         toast("Login success!")
   }
+  const cannotLogin = () => {
+    const res = infoAccountByJwtToken();
+    console.log(res);
+    if(res !== undefined){
+      navigate("/");
+    }
+  }
+  useEffect(()=> {
+    cannotLogin()
+  },[])
     return(
         <>
          <div>

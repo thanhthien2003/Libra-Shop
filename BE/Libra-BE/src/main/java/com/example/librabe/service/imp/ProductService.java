@@ -39,4 +39,15 @@ public class ProductService implements IProductService {
     public IProductDto getDetailProduct(Integer idProduct) {
         return productRepository.getDetailProduct(idProduct);
     }
+
+    @Override
+    public IProductDto checkProductDetail(Integer idType,Integer idSize) {
+        return productRepository.checkProductDetail(idType,idSize);
+    }
+
+    @Override
+    public void decreQuantity(Integer productId, Integer quantity) {
+        productRepository.decreQuantity(productId,quantity);
+    }
+
 }

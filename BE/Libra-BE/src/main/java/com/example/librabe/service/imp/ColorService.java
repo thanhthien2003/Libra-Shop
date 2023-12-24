@@ -16,4 +16,9 @@ public class ColorService implements IColorService {
     public List<ColorProduct> getColor() {
         return colorRepository.findAll();
     }
+
+    @Override
+    public List<ColorProduct> getAllColorOfProduct(String productName) {
+        return colorRepository.getAllColorOfProduct(productName);
+    }
 }

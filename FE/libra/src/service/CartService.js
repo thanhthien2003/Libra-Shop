@@ -5,9 +5,17 @@ export const getAllCart = async (userName) => {
     return res.data;
 }
 
-export const addToCart = async (cart) => {
+export const getAllTotalCart = async (userName) => {
+    const res = (await axios.get(`http://localhost:8080/api/cart?user_name=${userName}`))
+    return res.data.length;
+}
+
+export const addToCart = async (quantity,cart) => {
+        return await axios.post(`http://localhost:8080/api/cart/create?quantity=${quantity}`,cart);
+}
+export const addToCartOfDetail = async (quantity,cart) => {
     try {
-        return await axios.post(`http://localhost:8080/api/cart/create`,cart);
+        return await axios.post(`http://localhost:8080/api/cart/create/detail?quantity=${quantity}`,cart);
     } catch (error) {
         console.log(error);
     }

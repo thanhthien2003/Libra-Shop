@@ -14,12 +14,17 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CartDto {
 
-    private Integer quantity;
-
-
-    private String userName;
-
+   private String nameAccount;
+   private String userName;
+    private Double price;
+    private Integer quantityCart;
 
     private Integer productId;
+    private Integer idBrand;
+    private Integer idColor;
+    private Integer idSize;
+    private Integer idType;
+    private String nameProduct;
+   private String imageProduct;
 
 }

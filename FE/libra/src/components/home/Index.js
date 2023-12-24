@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Footer from "./Footer.js";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [list, setList] = useState([1, 2, 3, 4]);
@@ -140,10 +141,13 @@ function Home() {
           })
           }
           </Swiper> */}
-          {listNewProduct !== undefined && listNewProduct.map((card) => {
+          {listNewProduct !== undefined && listNewProduct.map((card,index) => {
             return (
               <>
-                <Card element={card} />
+              <div key={index}
+                  style={{ textAlign: "center" }}>
+                 <Card element={card} />   
+              </div>
               </>
             )
            
@@ -163,14 +167,13 @@ function Home() {
             <div className="col-lg-6">
               <div className="left-content">
                 <h2>Explore Our Products</h2>
-                <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
+                <span>This is Libra shop, a shop that sells second-hand related items. We have secondhand items of various designs and styles.</span>
                 <div className="quote">
-                  <i className="fa fa-quote-left" /><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+                  <i className="fa fa-quote-left" /><p>We will always support you.</p>
                 </div>
-                <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
-                <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
+                <p>The owner of our shop is a person who loves to mix secondhand items, so he decided to spend the investment money.</p>
                 <div className="main-border-button">
-                  <a href="products.html">Discover More</a>
+                  <Link to={"/product"}>Go to product</Link>
                 </div>
               </div>
             </div>
@@ -216,7 +219,7 @@ function Home() {
             <div className="col-lg-12">
               <div className="section-heading">
                 <h2>Social Media</h2>
-                <span>Details to details is what makes Hexashop different from the other themes.</span>
+                <span>Details to details is what makes Libra shop different from the other themes.</span>
               </div>
             </div>
           </div>
@@ -302,10 +305,9 @@ function Home() {
           <div className="row">
             <div className="col-lg-8">
               <div className="section-heading">
-                <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                <span>Details to details is what makes Hexashop different from the other themes.</span>
+                <h2>Give us the opportunity to serve you</h2>
               </div>
-              <form id="subscribe" action method="get">
+              {/* <form id="subscribe" action method="get">
                 <div className="row">
                   <div className="col-lg-5">
                     <fieldset>
@@ -323,7 +325,7 @@ function Home() {
                     </fieldset>
                   </div>
                 </div>
-              </form>
+              </form> */}
             </div>
             <div className="col-lg-4">
               <div className="row">
@@ -331,13 +333,13 @@ function Home() {
                   <ul>
                     <li>Store Location:<br /><span>Sunny Isles Beach, FL 33160, United States</span></li>
                     <li>Phone:<br /><span>010-020-0340</span></li>
-                    <li>Office Location:<br /><span>North Miami Beach</span></li>
+                    <li>Office Location:<br /><span>282 Tran Hung Dao</span></li>
                   </ul>
                 </div>
                 <div className="col-6">
                   <ul>
                     <li>Work Hours:<br /><span>07:30 AM - 9:30 PM Daily</span></li>
-                    <li>Email:<br /><span>info@company.com</span></li>
+                    <li>Email:<br /><span>libraShop@.company.com</span></li>
                     <li>Social Media:<br /><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
                   </ul>
                 </div>

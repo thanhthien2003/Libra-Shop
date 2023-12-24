@@ -133,3 +133,5 @@ m
 =Libra-BE/src/main/java/com/example/librabe/dto/IOrderDto.java,b\d\bd242eeb8ba6a530dac20e0b5c1dc3600baf4d95
 s
 CLibra-BE/src/main/java/com/example/librabe/dto/IOrderDetailDto.java,f\0\f0e60713da09e45982c56be66c99f055275bcd2d
+
+OLibra-BE/src/main/java/com/example/librabe/repository/IWarehouseRepository.java,6\0\6028c87c0f2ba17cf7b7c3d8fbb19e24dbcf4c92

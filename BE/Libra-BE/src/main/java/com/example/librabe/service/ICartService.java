@@ -11,7 +11,7 @@ public interface ICartService {
 
     void deleteCart(Integer productId,Integer accountId);
     List<ICartDto> getAllCart(String userName);
-    void increaseQuantity(Integer productId,Integer accountId);
+    void increaseQuantity(Integer quantity,Integer productId,Integer accountId);
 
     void reduceQuantity(Integer productId,Integer accountId);
 

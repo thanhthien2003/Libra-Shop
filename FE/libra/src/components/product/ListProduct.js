@@ -189,6 +189,14 @@ function ListProduct() {
               <button className="form-control btn btn-outline-dark" onClick={() => handleResetFilter()}>Reset</button>
             </div>
 
+
+            <div className="mt-2 mb-2 ml-2">
+              <label htmlFor="select">Sort by price: </label>
+              <select className="form-control" id="select"  onChange={(event) => setSort(event.target.value)}>
+                <option selected value={"asc"}>incrementally</option>
+                <option value={"desc"}>tapered</option>
+              </select>
+            </div>
           </div>
 
 

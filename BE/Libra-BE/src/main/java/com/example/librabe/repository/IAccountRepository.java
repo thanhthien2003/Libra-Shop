@@ -20,6 +20,10 @@ public interface IAccountRepository extends JpaRepository<Accounts,Integer> {
             "        :#{#accounts.isFlag} )",nativeQuery = true)
     void createNewAccount(Accounts accounts);
 
-//    @Query(value = "SELECT * from accounts acc WHERE acc.user_name = :userName",nativeQuery = true)
-//    Accounts findByAccountUserName(@Param("userName") String userName);
+    @Transactional
+    @Modifying
+    @Query(value = "update accounts acc set name_customer = :#{#accounts.nameCustomer}," +
+            "address = :#{#accounts.address} , phone_number = :#{#accounts.phoneNumber} " +
+            "where acc.id_account = :#{#accounts.id} ",nativeQuery = true)
+    void updateAccount(Accounts accounts);
 }

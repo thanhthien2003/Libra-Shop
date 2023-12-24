@@ -33,14 +33,17 @@ function Cards ({element}) {
         if(token === undefined){
             navigate("/login");
         }else{
-        const res = await addToCart({
-            quantity : 1,
+        const res = await addToCart(1,{
+            quantityCart : 1,
             userName : token.sub,
             productId : element.idProduct})
             console.log(res);
         if(res.status == 201){
             toast("Add to cart success")
-        } else{
+            
+        } else if(res.status == 204){
+            toast.error("We have only " + element.quantity + " pieces of this product , please check your cart! ");
+        } else {
             toast.error("Fail add to cart")
         }
         }
@@ -60,9 +63,13 @@ function Cards ({element}) {
             <Card.Body>
                 <Card.Title>
                     <p className="product-card-title">{element.nameProduct}</p>
+                    <span style={{fontSize:'12px'}}>{element.brandProduct}</span>
+                    <span style={{fontSize:'12px'}} className='ml-4'>Size {element.sizeProduct}</span>
+                    <p className='product-card-title'>{element.typeProduct}</p>
                 </Card.Title>
-                <Card.Text style={{color: "#0e0d0d"}}>
-                   {element.priceProduct} $
+                <Card.Text style={{color: "#0e0d0d",fontSize:'15px'}}>
+                Price:  ${new Intl.NumberFormat().format(element.priceProduct)}
+                <p>Inventory : {element.quantity}</p>
                 </Card.Text>
                 <button className="my-card-btn" onClick={handleAddToCart}><FaCartShopping />
                 </button>

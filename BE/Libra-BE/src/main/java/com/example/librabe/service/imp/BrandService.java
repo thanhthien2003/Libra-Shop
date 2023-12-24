@@ -17,4 +17,9 @@ public class BrandService implements IBrandService {
     public List<Brands> getAllBrand() {
         return brandRepository.findAll();
     }
+
+    @Override
+    public List<Brands> getAllBrandOfProduct(String productName) {
+        return brandRepository.getAllBrandOfProduct(productName);
+    }
 }

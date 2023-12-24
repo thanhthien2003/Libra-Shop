@@ -30,8 +30,8 @@ public class CartService implements ICartService {
     }
 
     @Override
-    public void increaseQuantity(Integer productId, Integer accountId) {
-        cartRepository.increaseQuantity(productId,accountId);
+    public void increaseQuantity(Integer quantity,Integer productId, Integer accountId) {
+        cartRepository.increaseQuantity(quantity,productId,accountId);
     }
 
     @Override

@@ -21,7 +21,7 @@ export function Paypal(props) {
                         intent: "CAPTURE",
                         purchase_units: [
                             {
-                                description: "Minh Pháp Jewelry",
+                                description: "Libra Shop",
                                 amount: {
                                     currency_code: "USD",
                                     value: props.props1,
@@ -40,14 +40,13 @@ export function Paypal(props) {
 
                         await createOrder(props.props2,res.sub,props.props1);
                     }
-                    Swal.fire("Thanh toán thành công!")
-                    window.location.reload();
-                    navigate("/product")
-                    console.log(order);
+                    Swal.fire("Successful payment!")
+                    props.props3();
+                    console.log("order",order);
                 },
                 onError: (err) => {
                     console.log(err);
-                    Swal.fire("Thanh toán thất bại!", "", "error");
+                    Swal.fire("Fail payment !", "", "error");
                 }
             })
             .render(paypal.current);

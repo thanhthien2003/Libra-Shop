@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IBrandService {
     List<Brands> getAllBrand();
+    List<Brands> getAllBrandOfProduct(String productName);
 }

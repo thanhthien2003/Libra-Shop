@@ -17,4 +17,9 @@ public class TypeService implements ITypeService {
     public List<TypeProduct> getAllType() {
         return typeRepository.findAll();
     }
+
+    @Override
+    public List<TypeProduct> getAllTypeOfProduct(String productName) {
+        return typeRepository.getAllTypeOfProduct(productName);
+    }
 }

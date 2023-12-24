@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IColorService {
     List<ColorProduct> getColor();
+    List<ColorProduct> getAllColorOfProduct(String productName);
 }

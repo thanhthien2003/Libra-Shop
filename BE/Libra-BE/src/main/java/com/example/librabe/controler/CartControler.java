@@ -2,11 +2,13 @@ package com.example.librabe.controler;
 
 import com.example.librabe.dto.CartDto;
 import com.example.librabe.dto.ICartDto;
+import com.example.librabe.dto.IProductDto;
 import com.example.librabe.model.Accounts;
 import com.example.librabe.model.Cart;
 import com.example.librabe.model.Products;
 import com.example.librabe.service.IAccountService;
 import com.example.librabe.service.ICartService;
+import com.example.librabe.service.IProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,8 @@ public class CartControler {
     private ICartService cartService;
     @Autowired
     private IAccountService accountService;
+    @Autowired
+    private IProductService productService;
 
     @GetMapping("")
     public  ResponseEntity<?> findAll(
@@ -39,7 +43,8 @@ public class CartControler {
 
     @PostMapping("create")
     public ResponseEntity<?> create(
-            @RequestBody CartDto cartDto
+            @RequestBody CartDto cartDto,
+            @RequestParam(value = "quantity",required = false) Integer quantity
             ){
         if (cartDto == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -48,14 +53,60 @@ public class CartControler {
         if (accounts == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+
+
         Cart cart = new Cart();
-        BeanUtils.copyProperties(cartDto,cart);
         cart.setAccountId(new Accounts(accounts.getId()));
         cart.setProductId(new Products(cartDto.getProductId()));
+        cart.setQuantity(cartDto.getQuantityCart());
         if (cartService.checkProductInCart(cart.getProductId().getId(), cart.getAccountId().getId()) == null){
             cartService.createNewCart(cart);
         } else {
-            cartService.increaseQuantity(cartDto.getProductId(), accounts.getId());
+            IProductDto productDto = productService.getDetailProduct(cartDto.getProductId());
+            Cart cart1 = cartService.checkProductInCart(cartDto.getProductId(), accounts.getId());
+            if (cart1.getQuantity() >= productDto.getQuantity()){
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            cartService.increaseQuantity(quantity,cartDto.getProductId(), accounts.getId());
+        }
+        return  new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("create/detail")
+    public ResponseEntity<?> createDetail(
+            @RequestBody CartDto cartDto,
+            @RequestParam(value = "quantity",required = false) Integer quantity
+    ){
+        if (cartDto == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        if (cartDto.getIdSize() == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        Accounts accounts = accountService.findByUserName(cartDto.getUserName());
+        if (accounts == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        IProductDto productDto = productService.checkProductDetail(cartDto.getIdType(), cartDto.getIdSize());
+        if (productDto == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        Cart cart1 = cartService.checkProductInCart(productDto.getIdProduct(), accounts.getId());
+        if (cart1 == null){
+            if (quantity >= productDto.getQuantity()){
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            Cart cart = new Cart();
+            cart.setAccountId(new Accounts(accounts.getId()));
+            cart.setProductId(new Products(productDto.getIdProduct()));
+            cart.setQuantity(cartDto.getQuantityCart());
+            cartService.createNewCart(cart);
+        } else {
+            if ((cart1.getQuantity() + quantity) >= productDto.getQuantity()){
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            cartService.increaseQuantity(quantity,productDto.getIdProduct(), accounts.getId());
         }
         return  new ResponseEntity<>(HttpStatus.CREATED);
     }

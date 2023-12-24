@@ -15,4 +15,9 @@ public interface IProductService {
     List<IProductDto> getListNewProduct();
 
     IProductDto getDetailProduct(Integer idProduct);
+
+    IProductDto checkProductDetail(Integer idType ,Integer idSize);
+    void decreQuantity(Integer productId,Integer quantity);
+
+
 }
