@@ -65,7 +65,7 @@ function Cards ({element}) {
                     <p className="product-card-title">{element.nameProduct}</p>
                     <span style={{fontSize:'12px'}}>{element.brandProduct}</span>
                     <span style={{fontSize:'12px'}} className='ml-4'>Size {element.sizeProduct}</span>
-                    <p className='product-card-title'>{element.typeProduct}</p>
+                    <p className='product-card-title' style={{fontSize:'15px'}}>{element.typeProduct}</p>
                 </Card.Title>
                 <Card.Text style={{color: "#0e0d0d",fontSize:'15px'}}>
                 Price:  ${new Intl.NumberFormat().format(element.priceProduct)}

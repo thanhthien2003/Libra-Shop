@@ -135,3 +135,5 @@ s
 CLibra-BE/src/main/java/com/example/librabe/dto/IOrderDetailDto.java,f\0\f0e60713da09e45982c56be66c99f055275bcd2d
 
 OLibra-BE/src/main/java/com/example/librabe/repository/IWarehouseRepository.java,6\0\6028c87c0f2ba17cf7b7c3d8fbb19e24dbcf4c92
+z
+JLibra-BE/src/main/java/com/example/librabe/repository/IRoleRepository.java,f\8\f8d7f64adf273fce815c92094620d2666e61fc2e

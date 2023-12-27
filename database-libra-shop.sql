@@ -55,6 +55,13 @@ CREATE TABLE products (
     price DOUBLE,
     image VARCHAR(255),
 	is_flag BOOLEAN,
+    product_detail_id INT,
+    FOREIGN KEY (product_detail_id) REFERENCES product_detail(id)
+);
+
+CREATE TABLE product_detail (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	is_flag BOOLEAN,
     color_id INT,
     brands_id INT,
     type_product_id INT,
@@ -190,62 +197,112 @@ values
   (1,'MEMBER'),
   (2,'ADMIN');
   
--- customer
-
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (1, 'Patric', '25/03/2023', '1', '6043 Dunning Street', '386 694 2488', 'pcauser0@ibm.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (2, 'Cathyleen', '24/11/2023', '0', '3479 Farragut Terrace', '703 788 8372', 'cdutch1@ow.ly', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (3, 'Travers', '26/03/2023', '1', '09755 Banding Hill', '525 671 3254', 'tbrothers2@myspace.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (4, 'Jehanna', '24/06/2023', '0', '30 Quincy Avenue', '454 203 2105', 'jbysh3@mapy.cz', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (5, 'Jory', '08/11/2023', '1', '75216 Blackbird Pass', '923 727 5881', 'jgittoes4@xing.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (6, 'Samantha', '01/11/2023', '0', '99 Milwaukee Hill', '480 551 3339', 'sjenicke5@google.it', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (7, 'Whitby', '30/09/2023', '1', '518 Delladonna Plaza', '729 773 6541', 'wmanktelow6@theguardian.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (8, 'Dex', '16/03/2023', '1', '333 Harbort Hill', '858 317 6405', 'ddanett7@wikimedia.org', 'ok˥', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (9, 'Melly', '28/03/2023', '0', '5148 Becker Junction', '650 259 8182', 'mwalkden8@ca.gov', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (10, 'Annissa', '06/07/2023', '0', '880 Schiller Drive', '413 661 9850', 'abeeze9@so-net.ne.jp', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (11, 'Walton', '05/06/2023', '1', '54348 Old Shore Circle', '486 661 4348', 'wfernehougha@fda.gov', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (12, 'Joly', '12/09/2023', '0', '645 Reinke Court', '795 924 6161', 'jcamillob@weibo.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (13, 'Eziechiele', '06/11/2023', '1', '2 Mandrake Pass', '703 261 4197', 'eheistermannc@gravatar.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (14, 'Gabby', '05/07/2023', '1', '4 Lillian Circle', '422 120 4163', 'glashamd@goo.gl', '̗̺͖̹̯͓Tok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (15, 'Simonne', '26/05/2023', '0', '641 Londonderry Terrace', '585 181 7076', 'stinkere@w3.org', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (16, 'Lynette', '18/10/2023', '0', '4 Longview Park', '663 725 5983', 'lbarettef@pbs.org', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (17, 'Hobey', '18/06/2023', '1', '715 Division Street', '430 422 4266', 'hbeadeg@army.mil', '﻿ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (18, 'Mack', '08/12/2022', '0', '79 Lukken Plaza', '244 903 6890', 'mwanjekh@google.it', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (19, 'Claybourne', '29/11/2023', '1', '7119 Dahle Street', '307 522 5870', 'cpatroni@tinyurl.com', 'ok', 0);
-insert into customer (id, name_customer, birthday, gender_customer, address, phone_customer, email, note, is_flag) values (20, 'Kenny', '09/06/2023', '1', '7 Park Meadow Place', '195 877 3352', 'kkellowayj@businessweek.com', 'ok', 0);
-
 
 -- accounts
 
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (1,'sfolbige0','123',0,1);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (2,'hgoricke1','123',0,2);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (3,'rferbrache2','123',0,3);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (4,'asaich3','123',0,4);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (5,'ddjurevic4','123', 0,5);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (6,'tklimkiewich5','123', 0,6);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (7,'amccoy6','123',0,7);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (8,'pbulbrook7','123',0,8);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (9,'cbailes8','123',0,9);
-insert into accounts (id, user_name, pass, is_flag, customer_id) values (10,'doaker9','123',0,10);
+insert into accounts (id, user_name, pass, is_flag) values (1,'sfolbige0','123',0,1);
+insert into accounts (id, user_name, pass, is_flag) values (2,'hgoricke1','123',0,2);
+insert into accounts (id, user_name, pass, is_flag) values (3,'rferbrache2','123',0,3);
+insert into accounts (id, user_name, pass, is_flag) values (4,'asaich3','123',0,4);
+insert into accounts (id, user_name, pass, is_flag) values (5,'ddjurevic4','123', 0,5);
+insert into accounts (id, user_name, pass, is_flag) values (6,'tklimkiewich5','123', 0,6);
+insert into accounts (id, user_name, pass, is_flag) values (7,'amccoy6','123',0,7);
+insert into accounts (id, user_name, pass, is_flag) values (8,'pbulbrook7','123',0,8);
+insert into accounts (id, user_name, pass, is_flag) values (9,'cbailes8','123',0,9);
+insert into accounts (id, user_name, pass, is_flag ) values (10,'doaker9','123',0,10);
 
 -- products
 
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (1, 'Tee black', 10000,'image',0,1,2,1,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (2, 'Tee White',10000,'image',0, 2,2,2, 5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (3, 'Tee colorful',10000,'image',0,5,2,3,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (4, 'Sweater',10000,'image',0,1,1,4,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (5, 'Blazer',10000,'image',0,1,1,5,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (6, 'Hoddie',10000,'image',0,1,1,6,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (7, 'Tanktop',10000,'image',0,1,1,7,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (8, 'Jacket',10000, 'Parkway',0,1,1,8,6);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (9, 'Polo',10000, 'Drive',0,1,1,9,6);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (10, 'Trench Coat',10000, 'Plaza',0,1,1,10,7);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (11, 'Varsity',10000, 'Crossing',0,1,1,11,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (12, 'Workshirt',10000, 'Hill',0,1,1,12,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (13, 'Track Pants',10000, 'Alley',0,1,1,13,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (14, 'Flannel',10000, 'Lane',0,1,2,14,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (15, 'Baggy jean',10000, 'Terrace',0,1,1,15,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (16, 'Kaki jean',10000, 'Parkway',0,1,1,16,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (17, 'Jacket kaki',10000, 'Point',0,1,1,17,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (18, 'Bomber',10000, 'Way',0,2,1,18,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (19, 'Black shirt',10000, 'Way',0,1,1,19,5);
-insert into products (id, name_products, price, image, is_flag, color_id, brands_id, type_product_id, size_id) values (20, 'White shirt',10000, 'Circle',0,2,1,20,7);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Tee black', 10000,'image',0,1);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Tee White',10000,'image',0,2);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Tee colorful',10000,'image',0,3);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Sweater',10000,'image',0,4);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Blazer',10000,'image',0,5);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Hoddie',10000,'image',0,6);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Tanktop',10000,'image',0,7);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Jacket',10000, 'Parkway',0,8);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Polo',10000, 'Drive',0,9);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Trench Coat',10000, 'Plaza',0,10);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Varsity',10000, 'Crossing',0,11);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Workshirt',10000, 'Hill',0,12);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Track Pants',10000, 'Alley',0,13);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Flannel',10000, 'Lane',0,14);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Baggy jean',10000, 'Terrace',0,15);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Kaki jean',10000, 'Parkway',0,16);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Jacket kaki',10000, 'Point',0,17);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Bomber',10000, 'Way',0,18);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('Black shirt',10000, 'Way',0,19);
+insert into products (name_products, price, image, is_flag, product_detail_id) values ('White shirt',10000,'Circle',0,20);
+
+-- product-detail
+
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,2,1,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,2,2,2,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,5,2,3,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,4,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,5,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,6,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,7,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,8,6);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,9,6);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,10,7);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,11,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,12,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,13,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,2,14,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,15,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,16,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,17,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,2,1,18,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,1,1,19,5);
+insert into product_detail (is_flag, color_id, brands_id, type_product_id, size_id) values (0,2,1,20,7);
+
+-- lấy ra đối tượng product trùng tên nhưng khác size , khác loại , khác hãng , khác màu
+select p.id as idProduct , p.image as imageProduct ,p.is_flag as flagProduct ,
+            p.name_products as nameProduct ,p.price as priceProduct ,b.name_brands as brandProduct ,
+            cp.name_color as colorProduct ,s.name_size as sizeProduct ,t.name_type as typeProduct
+            from products p join product_detail pd on p.product_detail_id = pd.id
+            join brands b on pd.brands_id = b.id
+            join color_product cp on pd.color_id = cp.id
+            join size_product s on pd.size_id = s.id
+            join type_product t on pd.type_product_id = t.id where (p.is_flag = 0
+                and p.name_products like 'Tee black'
+                );
+
+-- query lấy ra các size có tên  = tên product
+select  s.id ,s.name_size , s.is_flag
+from products p join product_detail pd on p.product_detail_id = pd.id
+                join brands b on pd.brands_id = b.id
+                join color_product cp on pd.color_id = cp.id
+                join size_product s on pd.size_id = s.id
+                join type_product t on pd.type_product_id = t.id where (p.is_flag = 0
+    and p.name_products like 'Tee black')
+        group by s.id;
+-- lấy ra các loại có tên = tên product
+select  t.id ,t.name_type ,t.is_flag
+from products p join product_detail pd on p.product_detail_id = pd.id
+                join brands b on pd.brands_id = b.id
+                join color_product cp on pd.color_id = cp.id
+                join size_product s on pd.size_id = s.id
+                join type_product t on pd.type_product_id = t.id where (p.is_flag = 0
+    and p.name_products like 'Tee black')
+group by t.id;
+--  lấy ra các hãng có tên  = tên product
+select  b.id,b.name_brands,b.is_flag
+from products p join product_detail pd on p.product_detail_id = pd.id
+                join brands b on pd.brands_id = b.id
+                join color_product cp on pd.color_id = cp.id
+                join size_product s on pd.size_id = s.id
+                join type_product t on pd.type_product_id = t.id where (p.is_flag = 0
+    and p.name_products like 'Tee black')
+group by b.id;
+
+-- lấy ra các hãng màu có tên = tên product
+select  cp.id ,cp.name_color ,cp.is_flag
+from products p join product_detail pd on p.product_detail_id = pd.id
+                join brands b on pd.brands_id = b.id
+                join color_product cp on pd.color_id = cp.id
+                join size_product s on pd.size_id = s.id
+                join type_product t on pd.type_product_id = t.id where (p.is_flag = 0
+    and p.name_products like 'Tee black')
+group by cp.id;

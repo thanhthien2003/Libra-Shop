@@ -101,7 +101,7 @@ function Header() {
                                                     <Link to={"/history"}  style={{ color: "black" }}><BiHistory /> History </Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item>
-                                                    <Link to={"/customer"} ><BsInfoSquare />Information</Link>
+                                                    <Link to={"/customer"}  style={{ color: "black" }}><BsInfoSquare />Information</Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item>
                                                     <div  onClick={() => handleLogout()}><BiLogOut /> Đăng xuất</div>
